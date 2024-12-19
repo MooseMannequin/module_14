@@ -73,18 +73,10 @@ async def main_menu(message):
 
 @dp.message_handler(text= 'Купить')
 async def get_buying_list(message):
-    await message.answer('Название: Product1, Описание: описание1, Цена: 100')
-    with open('image.jpg', 'rb') as img:
-        await message.answer_photo(img)
-    await message.answer('Название: Product2, Описание: описание2, Цена: 200')
-    with open('image.jpg', 'rb') as img:
-        await message.answer_photo(img)
-    await message.answer('Название: Product3, Описание: описание3, Цена: 300')
-    with open('image.jpg', 'rb') as img:
-        await message.answer_photo(img)
-    await message.answer('Название: Product4, Описание: описание4, Цена: 400')
-    with open('image.jpg', 'rb') as img:
-        await message.answer_photo(img)
+    for i in range(1,5):      
+        await message.answer(f'Название: Product{i}, Описание: описание{i}, Цена: {i*100}')
+        with open('image.jpg', 'rb') as img:
+            await message.answer_photo(img)
 
     await message.answer('Выберите продукт для покупки:', reply_markup= kbi2)
 
