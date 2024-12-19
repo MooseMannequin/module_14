@@ -20,12 +20,12 @@ ibutton1 = InlineKeyboardButton(text= 'Рассчитать норму кало�
 ibutton2 = InlineKeyboardButton(text= 'Формулы расчёта', callback_data='formulas')
 kbi.add(ibutton1, ibutton2)
 
-kbi2 = InlineKeyboardMarkup()
-ibutton3 = InlineKeyboardButton(text= 'Product1', callback_data='product_buying')
-ibutton4 = InlineKeyboardButton(text= 'Product2', callback_data='product_buying')
-ibutton5 = InlineKeyboardButton(text= 'Product3', callback_data='product_buying')
-ibutton6 = InlineKeyboardButton(text= 'Product4', callback_data='product_buying')
-kbi2.add(ibutton3, ibutton4, ibutton5, ibutton6)
+kbi2 = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text= 'Product1', callback_data='product_buying'),
+     InlineKeyboardButton(text= 'Product2', callback_data='product_buying'),
+     InlineKeyboardButton(text= 'Product3', callback_data='product_buying'),
+     InlineKeyboardButton(text= 'Product4', callback_data='product_buying')]
+])
 
 
 class UserState(StatesGroup):
